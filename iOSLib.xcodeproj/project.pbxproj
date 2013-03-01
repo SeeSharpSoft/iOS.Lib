@@ -19,6 +19,8 @@
 		C541197916DF5BB9004892E9 /* NSDate+Sharp.m in Sources */ = {isa = PBXBuildFile; fileRef = C541197816DF5BB9004892E9 /* NSDate+Sharp.m */; };
 		C541197C16DF6443004892E9 /* UIScrollView+Sharp.m in Sources */ = {isa = PBXBuildFile; fileRef = C541197B16DF6443004892E9 /* UIScrollView+Sharp.m */; };
 		C541197F16DF9764004892E9 /* NSArray+Sharp.m in Sources */ = {isa = PBXBuildFile; fileRef = C541197E16DF9764004892E9 /* NSArray+Sharp.m */; };
+		C541198216E0FE97004892E9 /* NSDictionary+Sharp.m in Sources */ = {isa = PBXBuildFile; fileRef = C541198116E0FE97004892E9 /* NSDictionary+Sharp.m */; };
+		C541198516E1007B004892E9 /* NSObject+Sharp.m in Sources */ = {isa = PBXBuildFile; fileRef = C541198416E1007B004892E9 /* NSObject+Sharp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		C541197B16DF6443004892E9 /* UIScrollView+Sharp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+Sharp.m"; path = "Categories/UIScrollView+Sharp.m"; sourceTree = "<group>"; };
 		C541197D16DF9764004892E9 /* NSArray+Sharp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Sharp.h"; path = "Categories/NSArray+Sharp.h"; sourceTree = "<group>"; };
 		C541197E16DF9764004892E9 /* NSArray+Sharp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Sharp.m"; path = "Categories/NSArray+Sharp.m"; sourceTree = "<group>"; };
+		C541198016E0FE97004892E9 /* NSDictionary+Sharp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Sharp.h"; path = "Categories/NSDictionary+Sharp.h"; sourceTree = "<group>"; };
+		C541198116E0FE97004892E9 /* NSDictionary+Sharp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Sharp.m"; path = "Categories/NSDictionary+Sharp.m"; sourceTree = "<group>"; };
+		C541198316E1007B004892E9 /* NSObject+Sharp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Sharp.h"; path = "Categories/NSObject+Sharp.h"; sourceTree = "<group>"; };
+		C541198416E1007B004892E9 /* NSObject+Sharp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Sharp.m"; path = "Categories/NSObject+Sharp.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				C541197B16DF6443004892E9 /* UIScrollView+Sharp.m */,
 				C541197D16DF9764004892E9 /* NSArray+Sharp.h */,
 				C541197E16DF9764004892E9 /* NSArray+Sharp.m */,
+				C541198016E0FE97004892E9 /* NSDictionary+Sharp.h */,
+				C541198116E0FE97004892E9 /* NSDictionary+Sharp.m */,
+				C541198316E1007B004892E9 /* NSObject+Sharp.h */,
+				C541198416E1007B004892E9 /* NSObject+Sharp.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -192,6 +202,8 @@
 				C541197916DF5BB9004892E9 /* NSDate+Sharp.m in Sources */,
 				C541197C16DF6443004892E9 /* UIScrollView+Sharp.m in Sources */,
 				C541197F16DF9764004892E9 /* NSArray+Sharp.m in Sources */,
+				C541198216E0FE97004892E9 /* NSDictionary+Sharp.m in Sources */,
+				C541198516E1007B004892E9 /* NSObject+Sharp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
