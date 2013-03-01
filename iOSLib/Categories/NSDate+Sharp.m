@@ -12,22 +12,23 @@
 
 -(NSDateComponents*)components:(unsigned int)unitFlags toDate:(NSDate*)endDate
 {
-    return [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:self toDate:endDate options:0];
+    return [[NSCalendar currentCalendar] components:unitFlags fromDate:self toDate:endDate options:0];
 }
 
 -(NSDateComponents*)components:(unsigned int)unitFlags
 {
+    NSMutableDictionary
     return [self components:unitFlags toDate:nil];
 }
 
 -(NSDateComponents*)componentsAll
 {
-    return [self components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit];
+    return [self components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit];
 }
 
 -(NSDateComponents*)componentsAllToDate:(NSDate*)endDate
 {
-    return [self components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit toDate:endDate];
+    return [self components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit toDate:endDate];
 }
 
 @end

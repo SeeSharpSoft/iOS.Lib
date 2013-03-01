@@ -11,11 +11,8 @@
 #pragma LinQ based on https://github.com/ColinEberhardt/LinqToObjectiveC.git
 
 typedef BOOL (^Predicate)(id obj);
-
 typedef BOOL (^Condition)(id obj);
-
 typedef id (^Selector)(id obj);
-
 typedef id (^Accumulator)(id first, id second);
 
 @interface NSArray (Sharp)
@@ -38,14 +35,14 @@ typedef id (^Accumulator)(id first, id second);
  
  @return An array whose elements are sorted in ascending order.
  */
-- (NSArray*) sort;
+- (NSArray*) orderBy;
 
 /** Sorts the elements of a sequence in ascending order by using a specified keySelector.
  
  @param keySelector A selector that provides the 'key' which the array should by sorted by.
  @return An array whose elements are sorted in ascending order.
  */
-- (NSArray*) sort:(Selector)keySelector;
+- (NSArray*) orderBy:(Selector)keySelector;
 
 /** Filters the elements of an an array based on a specified type.
  
@@ -126,5 +123,25 @@ typedef id (^Accumulator)(id first, id second);
 - (id) lastOrNil:(Condition)condition;
 - (NSArray*)reverse;
 
+/** Sorts the elements of a sequence in descending order.
+ 
+ @return An array whose elements are sorted in descending order.
+ */
+- (NSArray*) orderByDescending;
+
+/** Sorts the elements of a sequence in descending order by using a specified keySelector.
+ 
+ @param keySelector A selector that provides the 'key' which the array should by sorted by.
+ @return An array whose elements are sorted in descending order.
+ */
+- (NSArray*) orderByDescending:(Selector)keySelector;
+
+- (NSArray*) skipWhile:(Condition)condition;
+- (NSArray*) takeWhile:(Condition)condition;
+
+- (NSArray*) union:(NSArray*)second;
+- (NSArray*) concat:(NSArray*)second;
+- (NSArray*) except:(NSArray*)exceptional;
+- (NSArray*) intersect:(NSArray*)second;
 
 @end

@@ -30,7 +30,7 @@
     return result;
 }
 
-- (NSArray *)sort:(Selector)keySelector
+- (NSArray *)orderBy:(Selector)keySelector
 {
     return [self sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         id valueOne = keySelector(obj1);
@@ -40,9 +40,9 @@
     }];
 }
 
-- (NSArray *)sort
+- (NSArray *)orderBy
 {
-    return [self sort:^id(id item) { return item;} ];
+    return [self orderBy:^id(id item) { return item;} ];
 }
 
 - (NSArray *)ofType:(Class)type
@@ -192,14 +192,62 @@
     return [[self reverseObjectEnumerator] allObjects];
 }
 
-- (NSNumber*)sum
+- (NSArray*) orderByDescending
 {
-    NSNumber *result = [[NSNumber alloc] init];
-    for(id obj in self)
-    {
-        result += (NSNumber)obj;
+    return [[self orderBy] reverse];
+}
+
+- (NSArray*) orderByDescending:(Selector)keySelector
+{
+    return [[self orderBy:keySelector] reverse];
+}
+
+- (NSArray*) skipWhile:(Condition)condition
+{
+    int index = [self indexOfObject:[self firstOrNil:^BOOL(id obj) {
+        return !condition(obj);
+    }]];
+    
+    if (index < self.count && index >= 0) {
+        NSRange range = {.location = index, .length = self.count - index};
+        return [self subarrayWithRange:range];
     }
+    return @[];
+}
+- (NSArray*) takeWhile:(Condition)condition
+{
+    int index = [self indexOfObject:[self firstOrNil:^BOOL(id obj) {
+        return !condition(obj);
+    }]];
+    
+    NSRange range = {.location = 0, .length = index > self.count || index < 0 ? self.count : index + 1};
+    return [self subarrayWithRange:range];
+}
+
+- (NSArray*) union:(NSArray*)second
+{
+    NSMutableArray *result = [[NSMutableArray alloc] initWithArray:self];
+    [result addObjectsFromArray:second];
     return result;
+}
+
+- (NSArray*) concat:(NSArray *)second
+{
+    return [[self union:second] distinct];
+}
+
+- (NSArray*) except:(NSArray*)exceptional
+{
+    return [self where:^BOOL(id obj) {
+        return ![exceptional containsObject:obj];
+    }];
+}
+
+- (NSArray*) intersect:(NSArray*)second
+{
+    return [self where:^BOOL(id obj) {
+        return [second containsObject:obj];
+    }];
 }
 
 @end
